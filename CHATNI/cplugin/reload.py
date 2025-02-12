@@ -12,13 +12,13 @@ from pyrogram import filters
 
 load_dotenv()
 
-from PROMUSIC import app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import db
-from PROMUSIC.utils.database import get_assistant, get_authuser_names, get_cmode
-from PROMUSIC.utils.decorators import ActualAdminCB, AdminActual, language
-from PROMUSIC.utils.formatters import alpha_to_int, get_readable_time
-# from PROMUSIC.mongo.afkdb import LOGGERS
+from CHATNI import app
+from CHATNI.core.call import GIRL
+from CHATNI.misc import db
+from CHATNI.utils.database import get_assistant, get_authuser_names, get_cmode
+from CHATNI.utils.decorators import ActualAdminCB, AdminActual, language
+from CHATNI.utils.formatters import alpha_to_int, get_readable_time
+# from CHATNI.mongo.afkdb import LOGGERS
 from config import BANNED_USERS, adminlist, lyrical
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
@@ -73,7 +73,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await PRO.stop_stream_force(message.chat.id)
+        await GIRL.stop_stream_force(message.chat.id)
     except:
         pass
     userbot = await get_assistant(message.chat.id)
@@ -100,7 +100,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await PRO.stop_stream_force(chat_id)
+            await GIRL.stop_stream_force(chat_id)
         except:
             pass
     return await mystic.edit_text(_["reload_5"].format(i.mention))
