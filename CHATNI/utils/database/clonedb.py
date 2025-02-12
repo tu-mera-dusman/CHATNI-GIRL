@@ -1,4 +1,4 @@
-from PROMUSIC.core.mongo import mongodb, pymongodb
+from CHATNI.core.mongo import mongodb, pymongodb
 from typing import Dict, List, Union
 
 cloneownerdb = mongodb.cloneownerdb
