@@ -9,13 +9,13 @@ from pyrogram.types import InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
-from PROMUSIC import app
-from PROMUSIC.core.userbot import assistants
-from PROMUSIC.misc import SUDOERS, mongodb
-from PROMUSIC.plugins import ALL_MODULES
-from PROMUSIC.utils.database import get_served_chats, get_served_users, get_sudoers
-from PROMUSIC.utils.decorators.language import language, languageCB
-from PROMUSIC.utils.inline.stats import back_stats_buttons, stats_buttons
+from CHATNI import app
+from CHATNI.core.userbot import assistants
+from CHATNI.misc import SUDOERS, mongodb
+from CHATNI.plugins import ALL_MODULES
+from CHATNI.utils.database import get_served_chats, get_served_users, get_sudoers
+from CHATNI.utils.decorators.language import language, languageCB
+from CHATNI.utils.inline.stats import back_stats_buttons, stats_buttons
 from config import BANNED_USERS
 
 
