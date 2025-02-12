@@ -1,4 +1,4 @@
-from PROMUSIC.misc import clonedb
+from CHATNI.misc import clonedb
 
 
 async def put(
