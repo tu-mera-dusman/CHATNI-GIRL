@@ -4,16 +4,16 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
-from PROMUSIC import app
+from CHATNI import app
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 import config
-# from PROMUSIC import app
-from PROMUSIC.misc import _boot_
-from PROMUSIC.plugins.sudo.sudoers import sudoers_list
-from PROMUSIC.utils.database import get_served_chats, get_served_users, get_sudoers
-from PROMUSIC.utils import bot_sys_stats
-from PROMUSIC.utils.database import (
+# from CHATNI import app
+from CHATNI.misc import _boot_
+from CHATNI.plugins.sudo.sudoers import sudoers_list
+from CHATNI.utils.database import get_served_chats, get_served_users, get_sudoers
+from CHATNI.utils import bot_sys_stats
+from CHATNI.utils.database import (
     add_served_chat_clone,
     add_served_user_clone,
     blacklisted_chats,
@@ -21,13 +21,13 @@ from PROMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from PROMUSIC.utils.decorators.language import LanguageStart
-from PROMUSIC.utils.formatters import get_readable_time
-from PROMUSIC.utils.inline import help_pannel, private_panel, start_panel
+from CHATNI.utils.decorators.language import LanguageStart
+from CHATNI.utils.formatters import get_readable_time
+from CHATNI.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS, OWNER_ID
 from strings import get_string
 
-from PROMUSIC.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from CHATNI.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
 #--------------------------
 
