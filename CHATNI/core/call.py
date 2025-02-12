@@ -17,9 +17,9 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio, MediumQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from PROMUSIC import LOGGER, YouTube, app
-from PROMUSIC.misc import db
-from PROMUSIC.utils.database import (
+from CHATNI import LOGGER, YouTube, app
+from CHATNI.misc import db
+from CHATNI.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_lang,
@@ -31,10 +31,10 @@ from PROMUSIC.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from PROMUSIC.utils.exceptions import AssistantErr
-from PROMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
-from PROMUSIC.utils.inline.play import stream_markup
-from PROMUSIC.utils.stream.autoclear import auto_clean
+from CHATNI.utils.exceptions import AssistantErr
+from CHATNI.utils.formatters import check_duration, seconds_to_min, speed_converter
+from CHATNI.utils.inline.play import stream_markup
+from CHATNI.utils.stream.autoclear import auto_clean
 from strings import get_string
 
 autoend = {}
