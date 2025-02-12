@@ -3,11 +3,11 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.types import Message
 from config import *
-from PROMUSIC import app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.utils import bot_sys_stats
-from PROMUSIC.utils.decorators.language import language
-from PROMUSIC.utils.inline import supp_markup
+from CHATNI import app
+from CHATNI.core.call import GIRL
+from CHATNI.utils import bot_sys_stats
+from CHATNI.utils.decorators.language import language
+from CHATNI.utils.inline import supp_markup
 from config import BANNED_USERS
 
 
@@ -19,7 +19,7 @@ async def ping_com(client, message: Message, _):
         video="https://graph.org/file/5690109178f081adf464d.mp4",
         caption=_["ping_1"].format(app.mention),
     )
-    pytgping = await PRO.ping()
+    pytgping = await GIRL.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(
