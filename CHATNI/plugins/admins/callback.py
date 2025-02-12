@@ -3,10 +3,10 @@ from telegram import CallbackQuery
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from PROMUSIC import YouTube, app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import SUDOERS, db
-from PROMUSIC.utils.database import (
+from CHATNI import YouTube, app
+from CHATNI.core.call import PRO
+from CHATNI.misc import SUDOERS, db
+from CHATNI.utils.database import (
     get_active_chats,
     get_lang,
     get_upvote_count,
@@ -23,11 +23,11 @@ from pyrogram.errors import (
     UserAlreadyParticipant,
     UserNotParticipant,
 )
-from PROMUSIC.utils.database import get_assistant
-from PROMUSIC.utils.decorators.language import languageCB
-from PROMUSIC.utils.formatters import seconds_to_min
-from PROMUSIC.utils.inline import close_markup, stream_markup, stream_markup_timer
-from PROMUSIC.utils.stream.autoclear import auto_clean
+from CHATNI.utils.database import get_assistant
+from CHATNI.utils.decorators.language import languageCB
+from CHATNI.utils.formatters import seconds_to_min
+from CHATNI.utils.inline import close_markup, stream_markup, stream_markup_timer
+from CHATNI.utils.stream.autoclear import auto_clean
 import config
 from config import (
     BANNED_USERS,
