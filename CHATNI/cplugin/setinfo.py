@@ -2,14 +2,14 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram import filters, Client
-from PROMUSIC import app
-from PROMUSIC.misc import SUDOERS
-from PROMUSIC.utils.decorators.language import language
+from CHATNI import app
+from CHATNI.misc import SUDOERS
+from CHATNI.utils.decorators.language import language
 
-from PROMUSIC.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel, check_bot_premium
+from CHATNI.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel, check_bot_premium
 from config import SUPPORT_CHAT, OWNER_ID
 
-from PROMUSIC.utils.database import clonebotdb
+from CHATNI.utils.database import clonebotdb
 
 
 #set clone bot support channel
