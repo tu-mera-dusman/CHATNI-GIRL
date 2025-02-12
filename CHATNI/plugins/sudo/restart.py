@@ -10,15 +10,15 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from PROMUSIC import app
-from PROMUSIC.misc import HAPP, SUDOERS, XCB
-from PROMUSIC.utils.database import (
+from CHATNI import app
+from CHATNI.misc import HAPP, SUDOERS, XCB
+from CHATNI.utils.database import (
     get_active_chats,
     remove_active_chat,
     remove_active_video_chat,
 )
-from PROMUSIC.utils.decorators.language import language
-from PROMUSIC.utils.pastebin import PROBin
+from CHATNI.utils.decorators.language import language
+from CHATNI.utils.pastebin import PROBin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
