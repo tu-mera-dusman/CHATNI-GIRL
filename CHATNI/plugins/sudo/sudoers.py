@@ -2,13 +2,13 @@ from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.types import Message
 from strings import get_string, helpers
-from PROMUSIC import app
+from CHATNI import app
 from pyrogram.types import InputMediaVideo
-from PROMUSIC.misc import SUDOERS
-from PROMUSIC.utils.database import add_sudo, remove_sudo
-from PROMUSIC.utils.decorators.language import language
-from PROMUSIC.utils.extraction import extract_user
-from PROMUSIC.utils.inline import close_markup
+from CHATNI.misc import SUDOERS
+from CHATNI.utils.database import add_sudo, remove_sudo
+from CHATNI.utils.decorators.language import language
+from CHATNI.utils.extraction import extract_user
+from CHATNI.utils.inline import close_markup
 from config import BANNED_USERS, OWNER_ID
 
 
