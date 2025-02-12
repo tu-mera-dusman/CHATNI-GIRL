@@ -1,14 +1,14 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from PROMUSIC import app
-from PROMUSIC.core.call import PRO
+from CHATNI import app
+from CHATNI.core.call import GIRL
 
-from PROMUSIC.utils.decorators import AdminRightsCheck
-from PROMUSIC.utils.inline import close_markup
+from CHATNI.utils.decorators import AdminRightsCheck
+from CHATNI.utils.inline import close_markup
 from config import BANNED_USERS
-from PROMUSIC import userbot
-from PROMUSIC.core.mongo import mongodb, pymongodb
+from CHATNI import userbot
+from CHATNI.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -81,7 +81,7 @@ async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
         return await message.reply_text(_["admin_3"])
     await music_on(chat_id)
-    await PRO.resume_stream(chat_id)
+    await GIRL.resume_stream(chat_id)
     buttons_resume = [
         [
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
