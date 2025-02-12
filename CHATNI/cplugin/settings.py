@@ -8,8 +8,8 @@ from pyrogram.types import (
     Message,
 )
 
-from PROMUSIC import app
-from PROMUSIC.utils.database import (
+from CHATNI import app
+from CHATNI.utils.database import (
     add_nonadmin_chat,
     get_authuser,
     get_authuser_names,
@@ -25,15 +25,15 @@ from PROMUSIC.utils.database import (
     skip_off,
     skip_on,
 )
-from PROMUSIC.utils.decorators.admins import ActualAdminCB
-from PROMUSIC.utils.decorators.language import language, languageCB
-from PROMUSIC.utils.inline.settings import (
+from CHATNI.utils.decorators.admins import ActualAdminCB
+from CHATNI.utils.decorators.language import language, languageCB
+from CHATNI.utils.inline.settings import (
     auth_users_markup,
     playmode_users_markup,
     setting_markup,
     vote_mode_markup,
 )
-from PROMUSIC.utils.inline.start import private_panel
+from CHATNI.utils.inline.start import private_panel
 from config import BANNED_USERS, OWNER_ID
 
 
