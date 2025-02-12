@@ -3,10 +3,10 @@ import random
 from pyrogram import filters
 from pyrogram.types import Message
 
-from PROMUSIC import app
-from PROMUSIC.misc import db
-from PROMUSIC.utils.decorators import AdminRightsCheck
-from PROMUSIC.utils.inline import close_markup
+from CHATNI import app
+from CHATNI.misc import db
+from CHATNI.utils.decorators import AdminRightsCheck
+from CHATNI.utils.inline import close_markup
 from config import BANNED_USERS
 
 
