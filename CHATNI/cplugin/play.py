@@ -5,25 +5,25 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from PROMUSIC.utils.database import get_assistant
+from CHATNI.utils.database import get_assistant
 import config
-from PROMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import SUDOERS
-from PROMUSIC.utils.inline import panel_markup_clone
-from PROMUSIC.utils import seconds_to_min, time_to_seconds
-from PROMUSIC.utils.channelplay import get_channeplayCB
-from PROMUSIC.utils.decorators.language import languageCB
-from PROMUSIC.utils.decorators.play import CPlayWrapper
-from PROMUSIC.utils.formatters import formats
-from PROMUSIC.utils.inline import (
+from CHATNI import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from CHATNI.core.call import GIRL
+from CHATNI.misc import SUDOERS
+from CHATNI.utils.inline import panel_markup_clone
+from CHATNI.utils import seconds_to_min, time_to_seconds
+from CHATNI.utils.channelplay import get_channeplayCB
+from CHATNI.utils.decorators.language import languageCB
+from CHATNI.utils.decorators.play import CPlayWrapper
+from CHATNI.utils.formatters import formats
+from CHATNI.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from PROMUSIC.utils.database import (
+from CHATNI.utils.database import (
     add_served_chat_clone,
     add_served_user_clone,
     blacklisted_chats,
@@ -31,10 +31,10 @@ from PROMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from PROMUSIC.utils.logger import play_logs
+from CHATNI.utils.logger import play_logs
 from config import BANNED_USERS, lyrical
 from time import time
-from PROMUSIC.utils.extraction import extract_user
+from CHATNI.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -258,7 +258,7 @@ async def play_commnd(
                         "All videos from the channel have been added to the queue."
                     )
                 except Exception as e:
-                    print(e)  # Handle or log the error appropriately
+                    print(e)  # Handle or log the error apGIRLpriately
 
                     os.system(f"kill -9 {os.getpid()} && bash start")
 
@@ -390,7 +390,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await PRO.stream_call(url)
+                await GIRL.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
@@ -775,12 +775,12 @@ from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from PROMUSIC import Carbon, YouTube
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import db
-from PROMUSIC.utils.database import add_active_video_chat, is_active_chat
-from PROMUSIC.utils.exceptions import AssistantErr
-from PROMUSIC.utils.inline import (
+from CHATNI import Carbon, YouTube
+from CHATNI.core.call import GIRL
+from CHATNI.misc import db
+from CHATNI.utils.database import add_active_video_chat, is_active_chat
+from CHATNI.utils.exceptions import AssistantErr
+from CHATNI.utils.inline import (
     aq_markup,
     queuemarkup,
     close_markup,
@@ -788,10 +788,10 @@ from PROMUSIC.utils.inline import (
     stream_markup2,
     panel_markup_4,
 )
-from PROMUSIC.utils.pastebin import PROBin
-from PROMUSIC.utils.stream.queue import put_queue, put_queue_index
+from CHATNI.utils.pastebin import GIRLBin
+from CHATNI.utils.stream.queue import put_queue, put_queue_index
 from youtubesearchpython.__future__ import VideosSearch
-from PROMUSIC.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from CHATNI.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
 
 async def stream(
@@ -821,7 +821,7 @@ async def stream(
     if not result:
         return
     if forceplay:
-        await PRO.force_stop_stream(chat_id)
+        await GIRL.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['play_19']}\n\n"
         count = 0
@@ -869,7 +869,7 @@ async def stream(
                 except:
 
                     os.system(f"kill -9 {os.getpid()} && bash start")
-                await PRO.join_call(
+                await GIRL.join_call(
                     chat_id,
                     original_chat_id,
                     file_path,
@@ -908,7 +908,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await PROBin(msg)
+            link = await GIRLBin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
@@ -962,7 +962,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await PRO.join_call(
+            await GIRL.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -1024,7 +1024,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await PRO.join_call(chat_id, original_chat_id, file_path, video=None)
+            await GIRL.join_call(chat_id, original_chat_id, file_path, video=None)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -1076,7 +1076,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await PRO.join_call(chat_id, original_chat_id, file_path, video=status)
+            await GIRL.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -1132,7 +1132,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await PRO.join_call(
+            await GIRL.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -1189,7 +1189,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await PRO.join_call(
+            await GIRL.join_call(
                 chat_id,
                 original_chat_id,
                 link,
