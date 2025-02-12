@@ -1,7 +1,7 @@
 import asyncio
 
-from PROMUSIC.misc import db
-from PROMUSIC.utils.database import get_active_chats, is_music_playing
+from CHATNI.misc import db
+from CHATNI.utils.database import get_active_chats, is_music_playing
 
 
 async def timer():
