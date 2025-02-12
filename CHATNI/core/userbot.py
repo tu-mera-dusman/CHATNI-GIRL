@@ -11,7 +11,7 @@ assistantids = []
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
-            name="PROAss1",
+            name="GIRLAss1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
@@ -23,8 +23,8 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("PURVI_SUPPORT")
-                await self.one.join_chat("PURVI_UPDATES")
+                await self.one.join_chat("sundarma01")
+                await self.one.join_chat("sundarma01")
             except:
                 pass
             assistants.append(1)
@@ -32,7 +32,7 @@ class Userbot(Client):
                 await self.one.send_message(config.LOGGER_ID, "Assistant Started")
             except:
                 LOGGER(__name__).error(
-                    "Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
+                    "Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and GIRLmoted as admin!"
                 )
                 exit()
             self.one.id = self.one.me.id
