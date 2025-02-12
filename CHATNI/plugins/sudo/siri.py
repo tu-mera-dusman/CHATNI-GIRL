@@ -1,12 +1,12 @@
 import requests
 import random
-from PROMUSIC import app, userbot
-from PROMUSIC.misc import SUDOERS
+from CHATNI import app, userbot
+from CHATNI.misc import SUDOERS
 from pyrogram import * 
 from pyrogram.types import *
-# from PROMUSIC.utils.pro_ban import admin_filter
+# from CHATNI.utils.pro_ban import admin_filter
 from config import OWNER_ID
-OWNER_ID = 8143754205
+OWNER_ID = 6429248513
 from pyrogram.types import ChatPrivileges
 from pyrogram.errors import RPCError
 
