@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from PROMUSIC import app
-from PROMUSIC.core.call import PRO
+from CHATNI import app
+from CHATNI.core.call import PRO
 
 welcome = 20
 close = 30
