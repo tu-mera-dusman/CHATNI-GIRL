@@ -10,21 +10,21 @@ from pyrogram.errors.exceptions.bad_request_400 import (
     AccessTokenExpired,
     AccessTokenInvalid,
 )
-from PROMUSIC.utils.database import get_assistant
+from CHATNI.utils.database import get_assistant
 from config import API_ID, API_HASH
-from PROMUSIC import app
+from CHATNI import app
 from config import OWNER_ID
-from PROMUSIC.misc import SUDOERS
-from PROMUSIC.utils.database import get_assistant, clonebotdb
-from PROMUSIC.utils.database.clonedb import has_user_cloned_any_bot
+from CHATNI.misc import SUDOERS
+from CHATNI.utils.database import get_assistant, clonebotdb
+from CHATNI.utils.database.clonedb import has_user_cloned_any_bot
 from config import LOGGER_ID, CLONE_LOGGER
 import requests
-from PROMUSIC.utils.decorators.language import language
+from CHATNI.utils.decorators.language import language
 
 from datetime import datetime
 CLONES = set()
 
-C_BOT_DESC = "Wᴀɴᴛ ᴀ ʙᴏᴛ ʟɪᴋᴇ ᴛʜɪs? Cʟᴏɴᴇ ɪᴛ ɴᴏᴡ! ✅\n\nVɪsɪᴛ: @PurviMusicRobot ᴛᴏ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ!\n\n - Uᴘᴅᴀᴛᴇ: @PURVI_SUPPORT\n - Sᴜᴘᴘᴏʀᴛ: @PURVI_UPDATES"
+C_BOT_DESC = "Wᴀɴᴛ ᴀ ʙᴏᴛ ʟɪᴋᴇ ᴛʜɪs? Cʟᴏɴᴇ ɪᴛ ɴᴏᴡ! ✅\n\nVɪsɪᴛ: @sundarma01 ᴛᴏ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ!"
 
 C_BOT_COMMANDS = [
                 {"command": "/start", "description": "sᴛᴀʀᴛs ᴛʜᴇ ᴍᴜsɪᴄ ʙᴏᴛ"},
@@ -66,7 +66,7 @@ async def clone_txt(client, message, _):
                 API_ID,
                 API_HASH,
                 bot_token=bot_token,
-                plugins=dict(root="PROMUSIC.cplugin"), 
+                plugins=dict(root="CHATNI.cplugin"), 
             )
             await ai.start()
             bot = await ai.get_me()
@@ -199,7 +199,7 @@ async def restart_bots():
                 API_ID,
                 API_HASH,
                 bot_token=bot_token,
-                plugins=dict(root="PROMUSIC.cplugin"),
+                plugins=dict(root="CHATNI.cplugin"),
             )
             await ai.start()
 
