@@ -1,13 +1,13 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PROMUSIC import app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import SUDOERS, db
-from PROMUSIC.utils import AdminRightsCheck
-from PROMUSIC.utils.database import is_active_chat, is_nonadmin_chat
-from PROMUSIC.utils.decorators.language import languageCB
-from PROMUSIC.utils.inline import close_markup, speed_markup
+from CHATNI import app
+from CHATNI.core.call import GIRL
+from CHATNI.misc import SUDOERS, db
+from CHATNI.utils import AdminRightsCheck
+from CHATNI.utils.database import is_active_chat, is_nonadmin_chat
+from CHATNI.utils.decorators.language import languageCB
+from CHATNI.utils.inline import close_markup, speed_markup
 from config import BANNED_USERS, adminlist
 
 checker = []
@@ -86,7 +86,7 @@ async def del_back_playlist(client, callback_query, _):
         text=_["admin_32"].format(callback_query.from_user.mention),
     )
     try:
-        await PRO.speedup_stream(
+        await GIRL.speedup_stream(
             chat_id,
             file_path,
             speed,
