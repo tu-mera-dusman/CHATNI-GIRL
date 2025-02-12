@@ -6,22 +6,22 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from PROMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, LOGGER
-from PROMUSIC.core.call import PRO
-from PROMUSIC.utils import seconds_to_min, time_to_seconds
-from PROMUSIC.utils.channelplay import get_channeplayCB
-from PROMUSIC.utils.decorators.language import languageCB
-from PROMUSIC.utils.decorators.play import PlayWrapper
-from PROMUSIC.utils.formatters import formats
-from PROMUSIC.utils.inline import (
+from CHATNI import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, LOGGER
+from CHATNI.core.call import GIRL
+from CHATNI.utils import seconds_to_min, time_to_seconds
+from CHATNI.utils.channelplay import get_channeplayCB
+from CHATNI.utils.decorators.language import languageCB
+from CHATNI.utils.decorators.play import PlayWrapper
+from CHATNI.utils.formatters import formats
+from CHATNI.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from PROMUSIC.utils.logger import play_logs
-from PROMUSIC.utils.stream.stream import stream
+from CHATNI.utils.logger import play_logs
+from CHATNI.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
@@ -297,7 +297,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await PRO.stream_call(url)
+                await GIRL.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
@@ -519,7 +519,7 @@ async def play_music(client, CallbackQuery, _):
     return await mystic.delete()
 
 
-@app.on_callback_query(filters.regex("PROmousAdmin") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("GIRLmousAdmin") & ~BANNED_USERS)
 async def SHUKLAmous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
@@ -530,7 +530,7 @@ async def SHUKLAmous_check(client, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("PROPlaylists") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("GIRLPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
