@@ -1,11 +1,11 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PROMUSIC import YouTube, app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import db
-from PROMUSIC.utils import AdminRightsCheck, seconds_to_min
-from PROMUSIC.utils.inline import close_markup
+from CHATNI import YouTube, app
+from CHATNI.core.call import GIRL
+from CHATNI.misc import db
+from CHATNI.utils import AdminRightsCheck, seconds_to_min
+from CHATNI.utils.inline import close_markup
 from config import BANNED_USERS
 
 
@@ -56,7 +56,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
     if "index_" in file_path:
         file_path = playing[0]["vidid"]
     try:
-        await PRO.seek_stream(
+        await GIRL.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),
