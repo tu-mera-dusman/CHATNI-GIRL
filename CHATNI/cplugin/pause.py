@@ -1,15 +1,15 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from PROMUSIC import app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.utils.decorators import AdminRightsCheck
-from PROMUSIC.utils.inline import close_markup
+from CHATNI import app
+from CHATNI.core.call import GIRL
+from CHATNI.utils.decorators import AdminRightsCheck
+from CHATNI.utils.inline import close_markup
 from config import BANNED_USERS
 import random
 from typing import Dict, List, Union
 
-from PROMUSIC import userbot
-from PROMUSIC.core.mongo import mongodb, pymongodb
+from CHATNI import userbot
+from CHATNI.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -79,7 +79,7 @@ async def music_off(chat_id: int):
 async def pause_admin(cli, message: Message, _, chat_id):
 
     await music_off(chat_id)
-    await PRO.pause_stream(chat_id)
+    await GIRL.pause_stream(chat_id)
 
     buttons = [
         [
