@@ -1,9 +1,9 @@
 from pyrogram import filters, Client
 import os
-from PROMUSIC import YouTube, app
-from PROMUSIC.utils.channelplay import get_channeplayCB
-from PROMUSIC.utils.decorators.language import languageCB
-from PROMUSIC.utils.stream.stream import stream
+from CHATNI import YouTube, app
+from CHATNI.utils.channelplay import get_channeplayCB
+from CHATNI.utils.decorators.language import languageCB
+from CHATNI.utils.stream.stream import stream
 from config import BANNED_USERS
 
 
