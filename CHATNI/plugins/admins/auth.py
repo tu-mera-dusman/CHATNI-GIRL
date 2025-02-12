@@ -1,16 +1,16 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from PROMUSIC import app
-from PROMUSIC.utils import extract_user, int_to_alpha
-from PROMUSIC.utils.database import (
+from CHATNI import app
+from CHATNI.utils import extract_user, int_to_alpha
+from CHATNI.utils.database import (
     delete_authuser,
     get_authuser,
     get_authuser_names,
     save_authuser,
 )
-from PROMUSIC.utils.decorators import AdminActual, language
-from PROMUSIC.utils.inline import close_markup
+from CHATNI.utils.decorators import AdminActual, language
+from CHATNI.utils.inline import close_markup
 from config import BANNED_USERS, adminlist
 
 
