@@ -2,16 +2,16 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from PROMUSIC import YouTube, app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import db
-from PROMUSIC.utils.database import get_loop
-from PROMUSIC.utils.decorators import AdminRightsCheck
-from PROMUSIC.utils.inline import close_markup, stream_markup, stream_markup2
-from PROMUSIC.utils.stream.autoclear import auto_clean
-from PROMUSIC.utils.thumbnails import get_thumb
+from CHATNI import YouTube, app
+from CHATNI.core.call import GIRL
+from CHATNI.misc import db
+from CHATNI.utils.database import get_loop
+from CHATNI.utils.decorators import AdminRightsCheck
+from CHATNI.utils.inline import close_markup, stream_markup, stream_markup2
+from CHATNI.utils.stream.autoclear import auto_clean
+from CHATNI.utils.thumbnails import get_thumb
 from config import BANNED_USERS
-from PROMUSIC.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from CHATNI.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
 
 @Client.on_message(
@@ -63,7 +63,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await PRO.stop_stream(chat_id)
+                                    await GIRL.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -90,7 +90,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await PRO.stop_stream(chat_id)
+                    return await GIRL.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -101,7 +101,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await PRO.stop_stream(chat_id)
+                return await GIRL.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -126,7 +126,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await PRO.skip_stream(chat_id, link, video=status, image=image)
+            await GIRL.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup2(_, chat_id)
@@ -134,7 +134,7 @@ async def skip(cli, message: Message, _, chat_id):
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
-                f"https://t.me/NezukoProBot?start=info_{videoid}",
+                f"https://t.me/NezukoGIRLBot?start=info_{videoid}",
                 title[:23],
                 check[0]["dur"],
                 user,
@@ -159,7 +159,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await PRO.skip_stream(chat_id, file_path, video=status, image=image)
+            await GIRL.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, videoid, chat_id)
@@ -167,7 +167,7 @@ async def skip(cli, message: Message, _, chat_id):
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
-                f"https://t.me/NezukoProBot?start=info_{videoid}",
+                f"https://t.me/NezukoGIRLBot?start=info_{videoid}",
                 title[:23],
                 check[0]["dur"],
                 user,
@@ -179,7 +179,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await PRO.skip_stream(chat_id, videoid, video=status)
+            await GIRL.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup2(_, chat_id)
@@ -201,7 +201,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await PRO.skip_stream(chat_id, queued, video=status, image=image)
+            await GIRL.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
@@ -240,7 +240,7 @@ async def skip(cli, message: Message, _, chat_id):
             run = await message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
-                    f"https://t.me/NezukoProBot?start=info_{videoid}",
+                    f"https://t.me/AARU_MUSIC_XBOT?start=info_{videoid}",
                     title[:23],
                     check[0]["dur"],
                     user,
