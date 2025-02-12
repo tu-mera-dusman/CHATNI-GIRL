@@ -5,8 +5,8 @@ from pyrogram.types import (
 )
 from youtubesearchpython.__future__ import VideosSearch
 from pyrogram import filters, Client
-from PROMUSIC import app
-from PROMUSIC.utils.inlinequery import answer
+from CHATNI import app
+from CHATNI.utils.inlinequery import answer
 from config import BANNED_USERS
 
 
