@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from PROMUSIC import app
-from PROMUSIC.utils.database import get_playmode, get_playtype, is_nonadmin_chat
-from PROMUSIC.utils.decorators import language
-from PROMUSIC.utils.inline.settings import playmode_users_markup
+from CHATNI import app
+from CHATNI.utils.database import get_playmode, get_playtype, is_nonadmin_chat
+from CHATNI.utils.decorators import language
+from CHATNI.utils.inline.settings import playmode_users_markup
 from config import BANNED_USERS
 
 
