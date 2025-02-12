@@ -1,9 +1,9 @@
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from PROMUSIC import app
-from PROMUSIC.misc import SUDOERS, db
-from PROMUSIC.utils.database import (
+from CHATNI import app
+from CHATNI.misc import SUDOERS, db
+from CHATNI.utils.database import (
     get_authuser_names,
     get_cmode,
     get_lang,
@@ -44,7 +44,7 @@ def AdminRightsCheck(mystic):
                     [
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
-                            callback_data="PROmousAdmin",
+                            callback_data="GIRLmousAdmin",
                         ),
                     ]
                 ]
@@ -140,7 +140,7 @@ def AdminActual(mystic):
                     [
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
-                            callback_data="PROmousAdmin",
+                            callback_data="GIRLmousAdmin",
                         ),
                     ]
                 ]
