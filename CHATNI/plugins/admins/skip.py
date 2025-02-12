@@ -2,13 +2,13 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from PROMUSIC import YouTube, app
-from PROMUSIC.core.call import PRO
-from PROMUSIC.misc import db
-from PROMUSIC.utils.database import get_loop
-from PROMUSIC.utils.decorators import AdminRightsCheck
-from PROMUSIC.utils.inline import close_markup, stream_markup
-from PROMUSIC.utils.stream.autoclear import auto_clean
+from CHATNI import YouTube, app
+from CHATNI.core.call import GIRL
+from CHATNI.misc import db
+from CHATNI.utils.database import get_loop
+from CHATNI.utils.decorators import AdminRightsCheck
+from CHATNI.utils.inline import close_markup, stream_markup
+from CHATNI.utils.stream.autoclear import auto_clean
 from config import BANNED_USERS
 
 
@@ -47,7 +47,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await PRO.stop_stream(chat_id)
+                                    await GIRL.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -74,7 +74,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await PRO.stop_stream(chat_id)
+                    return await GIRL.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -85,7 +85,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await PRO.stop_stream(chat_id)
+                return await GIRL.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -110,7 +110,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await PRO.skip_stream(chat_id, link, video=status, image=image)
+            await GIRL.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -141,7 +141,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await PRO.skip_stream(chat_id, file_path, video=status, image=image)
+            await GIRL.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -159,7 +159,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await PRO.skip_stream(chat_id, videoid, video=status)
+            await GIRL.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -181,7 +181,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await PRO.skip_stream(chat_id, queued, video=status, image=image)
+            await GIRL.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
