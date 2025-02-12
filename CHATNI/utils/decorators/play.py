@@ -9,9 +9,9 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from PROMUSIC import YouTube, app
-from PROMUSIC.misc import SUDOERS
-from PROMUSIC.utils.database import (
+from CHATNI import YouTube, app
+from CHATNI.misc import SUDOERS
+from CHATNI.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
@@ -20,7 +20,7 @@ from PROMUSIC.utils.database import (
     is_active_chat,
     is_maintenance,
 )
-from PROMUSIC.utils.inline import botplaylist_markup
+from CHATNI.utils.inline import botplaylist_markup
 from config import PLAYLIST_IMG_URL, SUPPORT_CHAT, adminlist
 from strings import get_string
 
@@ -38,7 +38,7 @@ def PlayWrapper(command):
                     [
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
-                            callback_data="PROmousAdmin",
+                            callback_data="GIRLmousAdmin",
                         ),
                     ]
                 ]
@@ -160,7 +160,7 @@ def PlayWrapper(command):
                     await userbot.join_chat(invitelink)
                 except InviteRequestSent:
                     try:
-                        await app.approve_chat_join_request(chat_id, userbot.id)
+                        await app.apGIRLve_chat_join_request(chat_id, userbot.id)
                     except Exception as e:
                         return await message.reply_text(
                             _["call_3"].format(app.mention, type(e).__name__)
@@ -328,7 +328,7 @@ def CPlayWrapper(command):
                     await userbot.join_chat(invitelink)
                 except InviteRequestSent:
                     try:
-                        await client.approve_chat_join_request(chat_id, userbot.id)
+                        await client.apGIRLve_chat_join_request(chat_id, userbot.id)
                     except Exception as e:
                         await message.reply_text(
                             _["call_3"].format(i.mention, type(e).__name__)
