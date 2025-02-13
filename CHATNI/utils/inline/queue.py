@@ -1,6 +1,6 @@
 from typing import Union
-from PROMUSIC import app
-from PROMUSIC.utils.formatters import time_to_seconds
+from CHATNI import app
+from CHATNI.utils.formatters import time_to_seconds
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -75,10 +75,10 @@ def aq_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="˹❍ᴡηєʀ ᴀʙσᴜᴛ˼ ", url=f"https://t.me/ONE_WAS_SIGMA"
+                text="˹❍ᴡηєʀ ᴀʙσᴜᴛ˼ ", url=f"https://t.me/sundarma01"
             ),
             InlineKeyboardButton(
-                text="˹ᴄʜᴧᴛ ɢʀσᴜᴘ˼", url=f"https://t.me/+1NPyVr47HYtiYWE9"
+                text="˹ᴄʜᴧᴛ ɢʀσᴜᴘ˼", url=f"https://t.me/+BXxvwWdPfXsyYTA1"
             ),
         ],
       ]
@@ -113,7 +113,7 @@ def queuemarkup(_, vidid, chat_id):
         [
             InlineKeyboardButton(
                 text="๏ ᴍᴏʀᴇ ๏",
-                url="https://t.me/PURVI_SUPPORT",
+                url="https://t.me/sundarma01",
             ),
         ],
     ]
