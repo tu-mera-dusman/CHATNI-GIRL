@@ -1,7 +1,7 @@
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message, User
 
-from PROMUSIC import app
+from CHATNI import app
 
 
 async def extract_user(m: Message) -> User:
