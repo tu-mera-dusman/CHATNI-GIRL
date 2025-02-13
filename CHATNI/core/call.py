@@ -104,7 +104,7 @@ class Call(PyTgCalls):
                     vs = 0.68
                 if str(speed) == str("2.0"):
                     vs = 0.5
-                proc = await asyncio.create_subprocess_shell(
+                GIRLc = await asyncio.create_subcess_shell(
                     cmd=(
                         "ffmpeg "
                         "-i "
@@ -115,10 +115,10 @@ class Call(PyTgCalls):
                         f"atempo={speed} "
                         f"{out}"
                     ),
-                    stdin=asyncio.subprocess.PIPE,
-                    stderr=asyncio.subprocess.PIPE,
+                    stdin=asyncio.subcess.PIPE,
+                    stderr=asyncio.subcess.PIPE,
                 )
-                await proc.communicate()
+                await GIRLc.communicate()
             else:
                 pass
         else:
