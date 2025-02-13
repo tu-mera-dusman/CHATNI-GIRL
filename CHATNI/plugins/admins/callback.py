@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from CHATNI import YouTube, app
-from CHATNI.core.call import PRO
+from CHATNI.core.call import GIRL
 from CHATNI.misc import SUDOERS, db
 from CHATNI.utils.database import (
     get_active_chats,
@@ -55,7 +55,7 @@ async def unban_assistant(_, callback: CallbackQuery):
         await app.unban_chat_member(chat_id, userbot.id)
         await callback.answer("My assistant id unbanned successfully\n\nNow you can play song🔉\n\nThank you", show_alert=True)
     except Exception as e:
-        await callback.answer(f"Failed to unban my assistant because i don't have ban power\n\nPlease provide me ban power so that i can unban my assistant id", show_alert=True)
+        await callback.answer(f"Failed to unban my assistant because i don't have ban power\n\nPlease GIRLvide me ban power so that i can unban my assistant id", show_alert=True)
 
 
 @app.on_callback_query(filters.regex("ADMIN") & ~BANNED_USERS)
@@ -155,7 +155,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await PRO.pause_stream(chat_id)
+        await GIRL.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_2"].format(mention), reply_markup=close_markup(_)
         )
@@ -164,13 +164,13 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await PRO.resume_stream(chat_id)
+        await GIRL.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_4"].format(mention), reply_markup=close_markup(_)
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await PRO.stop_stream(chat_id)
+        await GIRL.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_5"].format(mention), reply_markup=close_markup(_)
@@ -196,7 +196,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         reply_markup=close_markup(_),
                     )
                     try:
-                        return await PRO.stop_stream(chat_id)
+                        return await GIRL.stop_stream(chat_id)
                     except:
                         return
             except:
@@ -210,7 +210,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         ),
                         reply_markup=close_markup(_),
                     )
-                    return await PRO.stop_stream(chat_id)
+                    return await GIRL.stop_stream(chat_id)
                 except:
                     return
         else:
@@ -242,7 +242,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await PRO.skip_stream(chat_id, link, video=status, image=image)
+                await GIRL.skip_stream(chat_id, link, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -276,7 +276,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await PRO.skip_stream(chat_id, file_path, video=status, image=image)
+                await GIRL.skip_stream(chat_id, file_path, video=status, image=image)
             except:
                 return await mystic.edit_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -295,7 +295,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await PRO.skip_stream(chat_id, videoid, video=status)
+                await GIRL.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -318,7 +318,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await PRO.skip_stream(chat_id, queued, video=status, image=image)
+                await GIRL.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             if videoid == "telegram":
