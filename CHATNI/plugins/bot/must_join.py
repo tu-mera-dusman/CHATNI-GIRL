@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
-from PROMUSIC import app
+from CHATNI import app
 
 #--------------------------
 
@@ -26,7 +26,7 @@ async def must_join_channel(app: Client, msg: Message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("• ᴊᴏɪɴ •", url=link),
+                                InlineKeyboardButton("• ᴊᴏɪɴ •", url="https://t.me/+BXxvwWdPfXsyYTA1"),
                                 InlineKeyboardButton("• ᴊᴏɪɴ •", url="https://t.me/sundarma01"),
                             ]
                         ]
