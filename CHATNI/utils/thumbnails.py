@@ -1,12 +1,12 @@
 import os, re, random, aiofiles, aiohttp, math
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
-from PROMUSIC import app
+from CHATNI import app
 from config import YOUTUBE_IMG_URL
 
-arial = ImageFont.truetype("PROMUSIC/assets/assets/font2.ttf", 30)
-font = ImageFont.truetype("PROMUSIC/assets/assets/font.ttf", 30)
-title_font = ImageFont.truetype("PROMUSIC/assets/assets/font3.ttf", 45)
+arial = ImageFont.truetype("CHATNI/assets/assets/font2.ttf", 30)
+font = ImageFont.truetype("CHATNI/assets/assets/font.ttf", 30)
+title_font = ImageFont.truetype("CHATNI/assets/assets/font3.ttf", 45)
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
@@ -95,7 +95,7 @@ async def get_thumb(videoid):
         draw.ellipse([565 + red_length - 10, 380 - 10, 565 + red_length + 10, 380 + 10], fill="red")
         draw.text((565, 400), "00:00", (255, 255, 255), font=arial)
         draw.text((1080, 400), duration, (255, 255, 255), font=arial)
-        play_icons = Image.open("PROMUSIC/assets/assets/play_icons.png").resize((580, 62))
+        play_icons = Image.open("CHATNI/assets/assets/play_icons.png").resize((580, 62))
         background.paste(play_icons, (565, 450), play_icons)
         stroke_width = 15
         stroke_color = (255, 255, 255)
