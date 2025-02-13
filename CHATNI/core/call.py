@@ -511,4 +511,4 @@ class Call(PyTgCalls):
             await self.change_stream(client, update.chat_id)
 
 
-PRO = Call()
+GIRL = Call()
