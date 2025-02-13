@@ -1,13 +1,13 @@
 {
-    "name": "PRO MUSIC",
+    "name": "CHATNI GIRL",
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram",
     "logo": "https://telegra.ph/file/0b074f71a8bb316eda177.jpg",
     "keywords": [
     "python3",
     "telegram",
     "bot",
-    "PRO",
-    "MusicBot",
+    "CHATNI",
+    "AaruMusicBot",
     "telegram-bot",
     "pyrogram"
     ],
@@ -38,7 +38,7 @@
         "required": true
       },
       "STRING_SESSION": {
-        "description": "A Pyrogram v2 String Session from @SessionFatherRobot on Telegram.",
+        "description": "A Pyrogram v2 String Session from telegram.tools on Telegram.",
         "value": "",
         "required": true
       },
