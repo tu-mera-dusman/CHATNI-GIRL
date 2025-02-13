@@ -1,8 +1,8 @@
-from PROMUSIC.core.bot import PRO
-from PROMUSIC.core.dir import dirr
-from PROMUSIC.core.git import git
-from PROMUSIC.core.userbot import Userbot
-from PROMUSIC.misc import dbb, heroku
+from CHATNI.core.bot import GIRL
+from CHATNI.core.dir import dirr
+from CHATNI.core.git import git
+from CHATNI.core.userbot import Userbot
+from CHATNI.misc import dbb, heroku
 from pyrogram import Client
 from SafoneAPI import SafoneAPI
 from .logging import LOGGER
@@ -12,7 +12,7 @@ git()
 dbb()
 heroku()
 
-app = PRO()
+app = GIRL()
 api = SafoneAPI()
 userbot = Userbot()
 
