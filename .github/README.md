@@ -107,9 +107,9 @@ For a full list of commands, use `/help` in [telegram](https://t.me/AARU_MUSIC_X
 </h3>
 
 <p align="center">
-<a href="https://t.me/https://t.me/sundarma01"><img src="https://img.shields.io/badge/-Support%20CHANNEL-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/https://t.me/sundarma01"><img src="https://img.shields.io/badge/-SUPPORT%20CHANNEL-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 
 <p align="center">
-<a href="https://t.me/CHATNI_GIRL"><img src="https://img.shields.io/badge/-Update%20OWNER-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/CHATNI_GIRL"><img src="https://img.shields.io/badge/-CHATNI%20OWNER-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
