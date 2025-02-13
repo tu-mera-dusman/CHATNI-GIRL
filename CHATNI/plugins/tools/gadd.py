@@ -3,8 +3,8 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 OWNERS = "6429248513"
-from PROMUSIC import app
-from PROMUSIC.utils.database import add_served_chat, get_assistant
+from CHATNI import app
+from CHATNI.utils.database import add_served_chat, get_assistant
 
 
 @app.on_message(filters.command("gadd") & filters.user(int(OWNERS)))
