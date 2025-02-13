@@ -1,23 +1,28 @@
-from CHATNI.core.bot import GIRL
+from .logging import LOGGER
 from CHATNI.core.dir import dirr
 from CHATNI.core.git import git
-from CHATNI.core.userbot import Userbot
 from CHATNI.misc import dbb, heroku
-from pyrogram import Client
-from SafoneAPI import SafoneAPI
-from .logging import LOGGER
 
+# Initialize these first
+LOGGER(__name__).info("Initializing core modules...")
 dirr()
 git()
 dbb()
 heroku()
 
+# Now import bot and other modules
+from CHATNI.core.bot import GIRL
+from CHATNI.core.userbot import Userbot
+from SafoneAPI import SafoneAPI
+
+# Initialize bot and APIs
 app = GIRL()
 api = SafoneAPI()
 userbot = Userbot()
 
 from .platforms import *
 
+# API Instances
 Apple = AppleAPI()
 Carbon = CarbonAPI()
 SoundCloud = SoundAPI()
