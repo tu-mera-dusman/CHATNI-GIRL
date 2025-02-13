@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from CHATNI import app
-from CHATNI.core.call import PRO
+from CHATNI.core.call import GIRL
 
 welcome = 20
 close = 30
