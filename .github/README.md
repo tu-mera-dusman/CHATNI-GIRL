@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/TEAMPURVI/PURVI_MUSIC"><img src="https://img.shields.io/github/stars/TeamProBots/ZeixBots?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
+<a href="https://github.com/TEAMPURVI/PURVI_MUSI"><img src="https://img.shields.io/github/stars/TeamProBots/ZeixBots?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
 <a href="https://github.com/TEAMPURVI/PURVIV2/network/members"> <img src="https://img.shields.io/github/forks/TEAMPURVI/PURVIV2?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 <a href="https://github.com/TEAMPURVI/PURVIV2/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License" /> </a>
 <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-orange?style=for-the-badge&logo=python" alt="Python" /> </a>
@@ -22,7 +22,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/RAUSHAN-SONALI-143/PURVIV2"> <img src="https://www.herokucdn.com/deploy/button.svg"></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tu-mera-dusman/CHATNI-GIRL"> <img src="https://www.herokucdn.com/deploy/button.svg"></a></p>
 
 
 
@@ -30,7 +30,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴋᴏʏᴇʙ 」─
 </h3>
 
-<p align="center"><a href="https://app.koyeb.com/deploy?name=purvi&type=git&repository=TEAMPURVI%2FPURVIV2&branch=master&builder=dockerfile"> <img src="https://www.koyeb.com/static/images/deploy/button.svg"></a></p>
+<p align="center"><a href="https://app.koyeb.com/deploy?name=purvi&type=git&repository=TU_MERA_DUSMAN%2FCHATNI_GIRL&branch=master&builder=dockerfile"> <img src="https://www.koyeb.com/static/images/deploy/button.svg"></a></p>
 
 ---
 
@@ -55,7 +55,7 @@
    ```
 5. **Clone the Repository**
    ```bash
-   git clone https://github.com/RAUSHAN-SONALI-143/PURVIV2 && cd PURVIV2
+   git clone https://github.com/tu-mera-dusman/CHATNI-GIRL && cd CHATNI_GIRL
    ```
 6. **Install Requirements**
    ```bash
@@ -97,7 +97,7 @@ The Hinata Bot offers a range of commands to enhance your music listening experi
 | `/stop`                 | Stop the bot and clear the queue.           |
 | `/queue`                | Display the list of songs in the queue.     |
 
-For a full list of commands, use `/help` in [telegram](https://t.me/HinataMusic_Robot).
+For a full list of commands, use `/help` in [telegram](https://t.me/AARU_MUSIC_XBOT).
 
 ---
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
@@ -107,9 +107,9 @@ For a full list of commands, use `/help` in [telegram](https://t.me/HinataMusic_
 </h3>
 
 <p align="center">
-<a href="https://t.me/PURVI_UPDATES"><img src="https://img.shields.io/badge/-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/https://t.me/sundarma01"><img src="https://img.shields.io/badge/-Support%20CHANNEL-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 
 <p align="center">
-<a href="https://t.me/PURVI_SUPPORT"><img src="https://img.shields.io/badge/-Update%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/CHATNI_GIRL"><img src="https://img.shields.io/badge/-Update%20OWNER-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
