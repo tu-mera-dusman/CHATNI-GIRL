@@ -28,7 +28,7 @@ from CHATNI.utils.decorators.language import languageCB
 from CHATNI.utils.formatters import seconds_to_min
 from CHATNI.utils.inline import close_markup, stream_markup, stream_markup_timer
 from CHATNI.utils.stream.autoclear import auto_clean
-import config
+from CHATNI.utils.thumbnails import get_thumb
 from config import (
     BANNED_USERS,
     SOUNCLOUD_IMG_URL,
@@ -53,9 +53,9 @@ async def unban_assistant(_, callback: CallbackQuery):
     
     try:
         await app.unban_chat_member(chat_id, userbot.id)
-        await callback.answer("My assistant id unbanned successfully\n\nNow you can play song🔉\n\nThank you", show_alert=True)
+        await callback.answer("𝖬𝖸 𝖠𝖲𝖲𝖨𝖲𝖳𝖠𝖬𝖳 𝖨𝖣 𝖴𝖭𝖡𝖠𝖭𝖭𝖤𝖣 𝖲𝖴𝖢𝖢𝖤𝖲𝖲𝖥𝖴𝖫𝖫𝖸\n\n➻ 𝖭𝖮𝖶 𝖸𝖮𝖴 𝖢𝖠𝖭 𝖯𝖫𝖠𝖸 𝖲𝖮𝖭𝖦𝖲\n\n𝖳𝖧𝖠𝖭𝖪 𝖸𝖮𝖴 𝖣𝖠𝖱𝖫𝖨𝖭𝖦", show_alert=True)
     except Exception as e:
-        await callback.answer(f"Failed to unban my assistant because i don't have ban power\n\nPlease GIRLvide me ban power so that i can unban my assistant id", show_alert=True)
+        await callback.answer(f"𝖥𝖠𝖨𝖫𝖤𝖣 𝖳𝖮 𝖴𝖭𝖡𝖠𝖭 𝖬𝖸 𝖠𝖲𝖲𝖨𝖲𝖳𝖠𝖭𝖳 𝖡𝖤𝖢𝖠𝖴𝖲𝖤 𝖨 𝖣𝖮𝖭𝖳 𝖧𝖠𝖵𝖤 𝖡𝖠𝖭 𝖯𝖮𝖶𝖤𝖱\n\n➻ 𝖯𝖫𝖤𝖠𝖲𝖤 𝖯𝖱𝖮𝖵𝖨𝖣𝖤 𝖬𝖤 𝖡𝖠𝖭 𝖯𝖮𝖶𝖤𝖱 𝖲𝖮 𝖳𝖧𝖠𝖳 𝖨 𝖢𝖠𝖭 𝖴𝖭𝖡𝖠𝖭 𝖬𝖸 𝖠𝖲𝖲𝖨𝖲𝖳𝖠𝖭𝖳 𝖨𝖣", show_alert=True)
 
 
 @app.on_callback_query(filters.regex("ADMIN") & ~BANNED_USERS)
@@ -179,7 +179,7 @@ async def del_back_playlist(client, CallbackQuery, _):
     elif command == "Skip" or command == "Replay":
         check = db.get(chat_id)
         if command == "Skip":
-            txt = f"{mention}\n Skiped"
+            txt = f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
             popped = None
             try:
                 popped = check.pop(0)
@@ -187,7 +187,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     await auto_clean(popped)
                 if not check:
                     await CallbackQuery.edit_message_text(
-                        f"{mention}\n Skiped"
+                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
                     )
                     await CallbackQuery.message.reply_text(
                         text=_["admin_6"].format(
@@ -202,7 +202,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 try:
                     await CallbackQuery.edit_message_text(
-                        f"{mention}\n Skiped"
+                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
                     )
                     await CallbackQuery.message.reply_text(
                         text=_["admin_6"].format(
@@ -214,7 +214,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     return
         else:
-            txt = f"{mention}\n playing"
+            txt = f"➻ sᴛʀᴇᴀᴍ ʀᴇ-ᴘʟᴀʏᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
         await CallbackQuery.answer()
         queued = check[0]["file"]
         title = (check[0]["title"]).title()
@@ -246,8 +246,10 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup(_, chat_id)
-            run = await CallbackQuery.message.reply_text(
-                text=_["stream_1"].format(
+            img = await get_thumb(videoid)
+            run = await CallbackQuery.message.reply_photo(
+                photo=img,
+                caption=_["stream_1"].format(
                     f"https://t.me/{app.username}?start=info_{videoid}",
                     title[:23],
                     duration,
@@ -280,8 +282,10 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 return await mystic.edit_text(_["call_6"])
             button = stream_markup(_, chat_id)
-            run = await CallbackQuery.message.reply_text(
-                text=_["stream_1"].format(
+            img = await get_thumb(videoid)
+            run = await CallbackQuery.message.reply_photo(
+                photo=img,
+                caption=_["stream_1"].format(
                     f"https://t.me/{app.username}?start=info_{videoid}",
                     title[:23],
                     duration,
@@ -349,8 +353,10 @@ async def del_back_playlist(client, CallbackQuery, _):
                 db[chat_id][0]["markup"] = "tg"
             else:
                 button = stream_markup(_, chat_id)
-                run = await CallbackQuery.message.reply_text(
-                    text=_["stream_1"].format(
+                img = await get_thumb(videoid)
+                run = await CallbackQuery.message.reply_photo(
+                    photo=img,
+                    caption=_["stream_1"].format(
                         f"https://t.me/{app.username}?start=info_{videoid}",
                         title[:23],
                         duration,
