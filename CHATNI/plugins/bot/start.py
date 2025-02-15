@@ -25,29 +25,38 @@ from CHATNI.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
-
-
-YUMI_PICS = [
-    "https://files.catbox.moe/4q7c4w.jpg",
-    "https://files.catbox.moe/90z6sq.jpg",
-    "https://files.catbox.moe/rdfi4z.jpg",
-    "https://files.catbox.moe/6f9rgp.jpg",
-    "https://files.catbox.moe/99wj12.jpg",
-    "https://files.catbox.moe/ezpnd2.jpg",
-    "https://files.catbox.moe/e7q55f.jpg",
-    "https://files.catbox.moe/qyfsi7.jpg",
-    "https://files.catbox.moe/kbke7s.jpg",
-    "https://files.catbox.moe/7icvpu.jpg",
-    "https://files.catbox.moe/4hd77z.jpg",
-    "https://files.catbox.moe/yn7wje.jpg",
-    "https://files.catbox.moe/kifsir.jpg",
-    "https://files.catbox.moe/zi21kc.jpg",
-    "https://files.catbox.moe/z0gh23.jpg",
-    "https://files.catbox.moe/f2s4ws.jpg",
-    "https://files.catbox.moe/26nzoq.jpg",
-    "https://files.catbox.moe/fu6jk3.jpg",
+TANYA = [
+    "https://files.catbox.moe/jrupn9.jpg",
+    "https://files.catbox.moe/5z141p.jpg",
+    "https://files.catbox.moe/fnl0h7.jpg",
+    "https://files.catbox.moe/1lz1go.jpg",
+    "https://files.catbox.moe/avackl.jpg",
+    "https://files.catbox.moe/1yrzwz.jpg",
+    "https://files.catbox.moe/6y22qw.jpg",
+    "https://files.catbox.moe/gnnsf2.jpg",
+    "https://files.catbox.moe/ss6r60.jpg",
+    "https://files.catbox.moe/yuob18.jpg",
+    "https://files.catbox.moe/i9xrrp.jpg",
+    "https://files.catbox.moe/a9tx8f.jpg"
+    "https://files.catbox.moe/wlt26x.jpg",
+    "https://files.catbox.moe/c1lylh.jpg",
+    "https://files.catbox.moe/82eymp.jpg",
 ]
 
+CHATNI_GIRL = [
+    "CAACAgUAAxkBAAEBYw5m7G9P80t1_j2B3Yd92giEZl5pUAACDQsAAu5MeVcOK7bEmdSlUB4E",
+    "CAACAgUAAxkBAAEBYwxm7G9LVcg14qUcZZA3UW_DD8b5EwACpwsAAo1FeFfhiv4M5X_-sR4E",
+    "CAACAgUAAxkBAAEBYwdm7G9B0AQOHXTL2YqQPS_1v9aoKwACGw0AAu3GeVeciSOmGXW1Mx4E",
+    "CAACAgUAAxkBAAEBYw9m7G9UNbKd5uykZTX8lZ4Cr8LAzAACrQsAAovseFe_Dx9-6uc6Ux4E",
+    "CAACAgUAAxkBAAEBYwpm7G9GSePQOKa6J19IJmN4aQdd6wAC-QoAAmpLeFeIwvGei64Sph4E",
+    "CAACAgUAAxkBAAEBYwlm7G9F_WH00zaCrHCrOE0hPNVwzgACGAwAAgLieFfTOC4m1R4KvR4E",
+    "CAACAgUAAxkBAAEBYyBm7G-lKV7aHgEF3nJFkAfn56C6cwACgAkAArWleFcq3_E-UPFIzh4E",
+    "CAACAgUAAxkBAAEBYw1m7G9NGhPaRs7LQ1qNjukWtqleMgAC9QkAAqeOeFeHI7lMCMruQR4E",
+    "CAACAgUAAxkBAAEBYwhm7G9C5a3pRXGlnxmd-bPpk6wPTgACKwoAAqDYeVd8I_IUW4LCkx4E",
+    "CAACAgUAAxkBAAEBYyFm7G-rzbXl2VpA37MJevvoJ3712QACbQoAAktbeFfdKoQ_a4J2PR4E",
+    "CAACAgUAAxkBAAEBYyJm7G-9KCjUg2MsRKZVTpR_aqn9lwACYA4AAqTycVdmzhfCS8nEPx4E",
+    "CAACAgUAAxkBAAEBYyNm7G_FwL1o8EbUs4wtYlMwIxAgCAACDQwAAncPeVe97cDgXeKF4B4E",
+]
 
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
@@ -58,8 +67,10 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
+            await message.reply_sticker(
+            random.choice(CHATNI_GIRL),)
             return await message.reply_photo(
-                random.choice(YUMI_PICS),
+                random.choice(TANYA),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -98,7 +109,8 @@ async def start_pm(client, message: Message, _):
             )
             await m.delete()
             await app.send_photo(
-                chat_id=message.chat.id,
+
+chat_id=message.chat.id,
                 photo=thumbnail,
                 caption=searched_text,
                 reply_markup=key,
@@ -110,10 +122,14 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
+        UP, CPU, RAM, DISK = await bot_sys_stats()
+        await message.reply_sticker(
+        random.choice(CHATNI_GIRL),)
         await message.reply_photo(
-            random.choice(YUMI_PICS),
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
-            # caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM,served_users,served_chats),
+            random.choice(TANYA),
+            caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM,served_users,served_chats),
             reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
@@ -128,8 +144,10 @@ async def start_pm(client, message: Message, _):
 async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
+    await message.reply_sticker(
+    random.choice(CHATNI_GIRL),)
     await message.reply_photo(
-        random.choice(YUMI_PICS),
+        random.choice(TANYA),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -163,8 +181,11 @@ async def welcome(client, message: Message):
                     return await app.leave_chat(message.chat.id)
 
                 out = start_panel(_)
-                await message.reply_text(
-                    text=_["start_3"].format(
+                await message.reply_sticker(
+                random.choice(CHATNI_GIRL),)
+                await message.reply_photo(
+                    random.choice(TANYA),
+                    caption=_["start_3"].format(
                         message.from_user.mention,
                         app.mention,
                         message.chat.title,
