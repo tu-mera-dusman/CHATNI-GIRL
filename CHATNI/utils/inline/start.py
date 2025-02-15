@@ -14,6 +14,10 @@ def start_panel(_):
             ),
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
         ],
+        [
+            InlineKeyboardButton(text="CLONE TOOLS", callback_data="clone_tools"),
+            InlineKeyboardButton(text="UPDATES", callback_data="updates"),
+        ],
     ]
     return buttons
 
@@ -32,5 +36,9 @@ def private_panel(_):
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHANNEL),
         ],
         [InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper")],
+        [
+            InlineKeyboardButton(text="CLONE TOOLS", callback_data="clone_tools"),
+            InlineKeyboardButton(text="UPDATES", callback_data="updates"),
+        ],
     ]
     return buttons
