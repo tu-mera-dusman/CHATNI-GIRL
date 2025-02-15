@@ -1,44 +1,40 @@
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, Message
+from pyrogram.types import InlineKeyboardButton
+
 import config
-import asyncio
 from CHATNI import app
 
 
-# Start panel for inline buttons
 def start_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["SO_B_1"], url=f"https://t.me/{app.username}?startgroup=true"
+                text=_["S_B_1"], url=f"https://t.me/{app.username}?startgroup=true"
             ),
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
-        ],
-        [
-            InlineKeyboardButton(text="CLONE TOOLS", callback_data="clone_tools"),
-            InlineKeyboardButton(text="UPDATES", callback_data="updates"),
         ],
     ]
     return buttons
 
 
-# Private panel for inline buttons
 def private_panel(_):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=_["S_B_3"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            )
+            InlineKeyboardButton(text=_["S_B_3"],url=f"https://t.me/{app.username}?startgroup=true",)
+        ],
+        [
+            InlineKeyboardButton(text=_["S_B_4"], callback_data="MAIN_CP"),
+        ],
+        
+        [
+            InlineKeyboardButton(text=_["S_B_10"], callback_data="ALLBOT_CP"),
+            InlineKeyboardButton(text=_["S_B_11"], callback_data="PROMOTION_CP"),
+        ],
+        [
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
         ],
         [
             InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),
-            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHANNEL),
-        ],
-        [InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper")],
-        [
-            InlineKeyboardButton(text="CLONE TOOLS", callback_data="clone_tools"),
-            InlineKeyboardButton(text="UPDATES", callback_data="updates"),
         ],
     ]
     return buttons
