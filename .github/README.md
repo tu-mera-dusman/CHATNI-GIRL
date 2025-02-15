@@ -30,7 +30,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴋᴏʏᴇʙ 」─
 </h3>
 
-<p align="center"><a href="https://app.koyeb.com/deploy?name=purvi&type=git&repository=TU_MERA_DUSMAN%2FCHATNI_GIRL&branch=master&builder=dockerfile"> <img src="https://www.koyeb.com/static/images/deploy/button.svg"></a></p>
+<p align="center"><a href="https://app.koyeb.com/deploy?name=purvi&type=git&repository=TU_MERA_DUSMAN%2FCHATNI_GIRL&branch=main&builder=dockerfile"> <img src="https://www.koyeb.com/static/images/deploy/button.svg"></a></p>
 
 ---
 
