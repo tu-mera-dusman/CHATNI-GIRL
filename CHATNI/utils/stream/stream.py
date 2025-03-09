@@ -165,7 +165,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await PRO.join_call(
+            await GIRL.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
